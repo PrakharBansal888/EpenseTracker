@@ -1,0 +1,135 @@
+/* Transaction List Styles */
+:root {
+  --primary: #667eea;
+  --success: #48bb78;
+  --danger: #f56565;
+  --warning: #ed8936;
+  --light: #f7fafc;
+  --dark: #2d3748;
+  --border: #e2e8f0;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-list.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #718096;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #ccc;
+}
+
+.transaction-item:hover {
+  background: #f0f4ff;
+}
+
+.transaction-item.income {
+  border-left-color: var(--success);
+}
+
+.transaction-item.expense {
+  border-left-color: var(--danger);
+}
+
+.transaction-category {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.transaction-details {
+  flex: 1;
+}
+
+.transaction-description {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 4px 0;
+}
+
+.transaction-category-name {
+  font-size: 13px;
+  color: #718096;
+  margin: 0;
+}
+
+.transaction-date {
+  font-size: 12px;
+  color: #cbd5e0;
+  margin: 4px 0 0 0;
+}
+
+.transaction-amount {
+  display: flex;
+  align-items: center;
+}
+
+.amount {
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 100px;
+  text-align: right;
+}
+
+.amount.income {
+  color: var(--success);
+}
+
+.amount.expense {
+  color: var(--danger);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e0;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  padding: 5px;
+}
+
+.delete-btn:hover {
+  color: var(--danger);
+}
+
+@media (max-width: 768px) {
+  .transaction-item {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+
+  .transaction-details {
+    flex: 0 0 100%;
+    order: 2;
+  }
+
+  .transaction-amount {
+    order: 1;
+  }
+
+  .delete-btn {
+    order: 3;
+  }
+}
